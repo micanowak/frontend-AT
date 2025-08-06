@@ -6,8 +6,8 @@
     "react-dom": "^19.1.1"
   },
   "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start"
-}
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  }
 }

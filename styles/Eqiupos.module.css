@@ -1,0 +1,34 @@
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #4d82bc;
+}
+
+.botonCategoria {
+  padding: 8px 16px;
+  margin-right: 8px;
+  background-color: #f5d7ef;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.listaEquipos {
+  list-style: none;
+  padding-left: 0;
+}
+
+.listaEquipos li {
+  background-color: #fff;
+  margin-bottom: 8px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
