@@ -1,6 +1,8 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import Navbar from '../components/NavBar';
-import styles from '../styles/Partidos.module.css';
+import styles from '../styles/partidos.module.css';
 
 export default function Partidos() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('mamis');
@@ -33,7 +35,7 @@ export default function Partidos() {
       <Navbar />
 
       <h1 className={styles.titulo}>
-        📅 Partidos por venir — <span style={{ textTransform: 'capitalize' }}>{categoriaSeleccionada}</span>
+        📅 Partidos por venir - <span style={{ textTransform: 'capitalize' }}>{categoriaSeleccionada}</span>
       </h1>
 
       <div>
@@ -51,8 +53,8 @@ export default function Partidos() {
         </button>
       </div>
 
-      <div style={{ marginTop: '16px' }}>
-        <label>Filtrar por día: </label>
+      <div className={styles.selectFiltro}>
+        <label>Filtrar por día:</label>
         <select
           value={diaSeleccionado}
           onChange={(e) => setDiaSeleccionado(e.target.value)}
@@ -64,22 +66,23 @@ export default function Partidos() {
         </select>
       </div>
 
-      <ul className={styles.lista}>
-        {partidosFiltrados.length > 0 ? (
-          partidosFiltrados.map((p) => {
-            const equipo1 = equipos.find((e) => e.id === p.idEqui1)?.nombre || 'Equipo 1';
-            const equipo2 = equipos.find((e) => e.id === p.idEqui2)?.nombre || 'Equipo 2';
-            return (
-              <li key={p.id}>
-                Día {p.dia} - {p.hora} hs - Cancha {p.cancha} <br />
-                {equipo1} vs {equipo2}
-              </li>
-            );
-          })
-        ) : (
-          <li>No hay partidos para este filtro.</li>
-        )}
-      </ul>
+      <div className={styles.lista}>
+        {partidosFiltrados.map((p) => {
+          const equipo1 = equipos.find((e) => e.id === p.idEqui1)?.nombre || 'Equipo 1';
+          const equipo2 = equipos.find((e) => e.id === p.idEqui2)?.nombre || 'Equipo 2';
+          return (
+            <div key={p.id} className={styles.partidoCard}>
+              <div className={styles.equipo}>{equipo1}</div>
+              <div className={styles.info}>
+                <div>Día {p.dia}</div>
+                <div>{p.hora} hs</div>
+                <div>Cancha {p.cancha}</div>
+              </div>
+              <div className={styles.equipo}>{equipo2}</div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

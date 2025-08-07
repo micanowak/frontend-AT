@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import Navbar from '../components/NavBar';
 import styles from '../styles/Eqiupos.module.css';
@@ -20,7 +22,7 @@ export default function Equipos() {
       <Navbar />
 
       <h1 className={styles.titulo}>
-        👥 Equipos — <span style={{ textTransform: 'capitalize' }}>{categoriaSeleccionada}</span>
+        👥 Equipos - <span style={{ textTransform: 'capitalize' }}>{categoriaSeleccionada}</span>
       </h1>
 
       <div>

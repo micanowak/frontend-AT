@@ -1,27 +1,148 @@
 .contenedor {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 32px 20px;
+  background-color: #f9f9fb;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .titulo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
   color: #4d82bc;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .botonCategoria {
-  padding: 8px 16px;
-  margin-right: 8px;
+  padding: 10px 20px;
+  margin-right: 12px;
   background-color: #c4dafa;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.botonCategoria:hover {
+  background-color: #84b6f4;
+  color: white;
 }
 
 .lista {
-  margin-top: 16px;
   list-style: none;
   padding: 0;
+  margin-top: 24px;
+}
+
+.lista li {
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.selectFiltro {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.selectFiltro select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 20px 12px;
+  }
+
+  .titulo {
+    font-size: 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .botonCategoria {
+    margin-bottom: 8px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .tabla th,
+  .tabla td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .lista li,
+  .listaEquipos li {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .selectFiltro {
+    font-size: 15px;
+  }
+
+  .selectFiltro select {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+.partidoCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 16px 24px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  min-height: 80px;
+  gap: 10px;
+  flex-wrap: nowrap; /* ✅ Mantiene horizontal en móvil */
+}
+
+.equipo {
+  flex: 1;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.info {
+  flex: 1;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+@media (max-width: 600px) {
+  /* NO TOCAR partidoCard */
+  /* Podés reducir un poco el font-size si querés */
+  .equipo {
+    font-size: 14px;
+  }
+
+  .info div {
+    font-size: 13px;
+  }
 }

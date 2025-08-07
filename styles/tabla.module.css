@@ -1,33 +1,96 @@
 .contenedor {
   max-width: 900px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 32px 20px;
+  background-color: #f9f9fb;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .titulo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
   color: #4d82bc;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .botonCategoria {
-  padding: 8px 16px;
-  margin-right: 8px;
+  padding: 10px 20px;
+  margin-right: 12px;
   background-color: #f3c2ea;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.botonCategoria:hover {
+  background-color: #f5d7ef;
+  color: white;
 }
 
 .tabla {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 24px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.tabla th,
+.tabla th {
+  background-color: #4d82bc;
+  color: white;
+  padding: 12px;
+  font-weight: 600;
+}
+
 .tabla td {
-  border: 1px solid #ccc;
-  padding: 8px;
+  padding: 12px;
   text-align: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 20px 12px;
+  }
+
+  .titulo {
+    font-size: 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .botonCategoria {
+    margin-bottom: 8px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .tabla th,
+  .tabla td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .lista li,
+  .listaEquipos li {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .selectFiltro {
+    font-size: 15px;
+  }
+
+  .selectFiltro select {
+    width: 100%;
+    margin-top: 8px;
+  }
 }

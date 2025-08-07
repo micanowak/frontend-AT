@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import Navbar from '../components/NavBar';
 import styles from '../styles/Tabla.module.css';
@@ -22,7 +24,7 @@ export default function Tabla() {
       <Navbar />
 
       <h1 className={styles.titulo}>
-        📊 Tabla de posiciones — <span style={{ textTransform: 'capitalize' }}>{categoriaSeleccionada}</span>
+        📊 Tabla de posiciones - <span style={{ textTransform: 'capitalize' }}>{categoriaSeleccionada}</span>
       </h1>
 
       <div>
